@@ -48,7 +48,6 @@ cout << "Your account has been successfully created! register/login/exit: "; //T
 
 
 
-
 void Login(){ // function that will read the file the user created their account on
 cout << "Please enter your username: ";
         cin >> inputUsername;
@@ -77,7 +76,6 @@ cout << "Please enter your username: ";
     }
 }
 }
-
 
 
 
