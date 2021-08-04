@@ -6,6 +6,7 @@ using namespace std;
 using namespace std::this_thread; // sleep_for, sleep_until
 using namespace std::chrono; // nanoseconds, system_clock, seconds
 
+
 class User {
 //Created class, so we can keep variables in one place that can be accessed by both CreateAccount() and Login() functions
 public:
