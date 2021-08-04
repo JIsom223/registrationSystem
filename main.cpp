@@ -100,8 +100,8 @@ if (command == "register")//this if statement will take the user to the function
 else if (command == "login"){ //if statement that will allow the user to login to their account
 
 m.Login(); //goes to the Login() function so the user can login to their account
+cout << "Thank you for signing in. Since this is a test, you will automatically be signed out\n";
 sleep_until(system_clock::now() + seconds(3)); // Small delay to imitate a system logging someone out automatically
-cout << "Thank you for signing in. Since this is a test, you will automatically be signed out";
 cout << m.inputUsername << " you have been signed out\n"; //give the user the chance to enter the options again
 cout << "Please type one of these options to proceed: register/login/exit: ";
 }
