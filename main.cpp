@@ -76,12 +76,6 @@ cout << "Please enter your username: ";
         Login(); //Since the username or password is incorrect, allow the user to reenter their info
     }
 }
-
-cout << "Thank you for Logging in. Since this is just a test, you will automatically be signed out\n"; //Since there is no logout system, make it to where the user thinks it will log them out automatically
-sleep_until(system_clock::now() + seconds(3)); // Small delay to imitate a system logging someone out automatically
-cout << inputUsername << " you have been signed out\n"; //give the user the chance to enter the options again
-cout << "Please type one of these options to proceed: register/login/exit: ";
-
 }
 
 
@@ -104,8 +98,13 @@ if (command == "register")//this if statement will take the user to the function
  m.CreateAccount(); //goes to CreateAccount() function to allow user to make their account
 
 
-else if (command == "login") //if statement that will allow the user to login to their account
+else if (command == "login"){ //if statement that will allow the user to login to their account
+
 m.Login(); //goes to the Login() function so the user can login to their account
+sleep_until(system_clock::now() + seconds(3)); // Small delay to imitate a system logging someone out automatically
+cout << m.inputUsername << " you have been signed out\n"; //give the user the chance to enter the options again
+cout << "Please type one of these options to proceed: register/login/exit: ";
+}
 
 
 else //if the user enters a command other than the three given, it will give them an error message
