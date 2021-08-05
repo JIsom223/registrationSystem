@@ -73,15 +73,15 @@ cout << "Please enter your username: ";
     if(found) { //if it finds the username and password, will log user in
         cout << "Welcome "<< inputUsername << '\n';
     }
-    else {
+    else { //If the user enters the wrong information, it will let them know while also asking if they want to return to the menu in case they didn't create an account
         cout << "\nUsername and/or password incorrect!\n\n";
         cout << "If you need to register for an account, please type return to go back to the main menu or type anything else to try again: ";
         cin >> loginCommand;
 
-        if(loginCommand != "return")
+        if(loginCommand != "return") //if they enter anything other than return, it will allow them to attempt to login again
     Login(); //Since the username or password is incorrect, allow the user to reenter their info
 
-        else{
+        else{ //if the user entered return, take them back to the menu
             cout << "Returning to main menu...\n";
         }
         
@@ -111,15 +111,18 @@ if (command == "register")//this if statement will take the user to the function
 
 
 else if (command == "login"){ //if statement that will allow the user to login to their account
-
 m.Login(); //goes to the Login() function so the user can login to their account
-if(m.loginCommand != "return"){
+
+if(m.loginCommand != "return"){ // check to see if the user didn't enter any login information. We don't want to thank the user if they didn't sign in
+
 cout << "Thank you for signing in. Since this is a test, you will automatically be signed out\n";
 sleep_until(system_clock::now() + seconds(3)); // Small delay to imitate a system logging someone out automatically
 cout << m.inputUsername << " you have been signed out\n"; //give the user the chance to enter the options again
+
 }
 else{
-    m.loginCommand.clear();
+
+    m.loginCommand.clear(); //Clears string, so if the user needs to return it will give the proper messages
 }
 cout << "Please type one of these options to proceed: register/login/exit: ";
 }
