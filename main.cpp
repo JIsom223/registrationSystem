@@ -102,7 +102,7 @@ string command; //the variable that will allow the user to create, login, or exi
 
 
 cout << "Please type one of these options to proceed: register/login/exit: "; //The menu for the user to decide what they want to do
-cin >> command; //grabs the input from the user
+cin >> command;
 
 while(command != "exit"){ //we want to loop until the user wants to logout just in case they want to login immediately after they create their account
 
